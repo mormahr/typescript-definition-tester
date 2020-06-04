@@ -1,9 +1,9 @@
 /// <reference path="../../dist/typescript-definition-tester.d.ts" />
 import * as tt from "typescript-definition-tester";
-import * as test from 'test';
+import * as test from "test";
 
-tt.compile(['somefilename'], {}, () => {});
+tt.compile(["somefilename"], {}, () => {});
 
 const person: test.IPerson = {
-    name: 'Adam'
-}
+  name: "Adam",
+};

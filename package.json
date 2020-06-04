@@ -26,7 +26,10 @@
     "@types/mocha": "^5.2.0",
     "@types/node": "8",
     "bluebird": "^2.9.24",
+    "husky": ">=4",
+    "lint-staged": ">=10",
     "mocha": "^5.1.1",
+    "prettier": "2.0.5",
     "typescript": "^3.9.3"
   },
   "typescript": {
@@ -39,5 +42,13 @@
   },
   "peerDependencies": {
     "typescript": "1.x || 2.x"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,ts,json,css,md,yml,yaml}": "prettier --write"
   }
 }

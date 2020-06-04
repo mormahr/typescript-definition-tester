@@ -1,7 +1,7 @@
-var dts = require('dts-bundle');
-var pkg = require('./package.json');
+var dts = require("dts-bundle");
+var pkg = require("./package.json");
 
 dts.bundle({
-    name: pkg.name,
-    main: 'dist/index.d.ts'
+  name: pkg.name,
+  main: "dist/index.d.ts",
 });

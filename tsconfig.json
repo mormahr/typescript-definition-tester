@@ -1,20 +1,11 @@
 {
-    "compilerOptions": {
-        "lib": [
-            "es6"
-        ],
-        "module": "commonjs",
-        "sourceMap": true,
-        "target": "es6",
-        "types": [
-            "assertion-error",
-            "lodash",
-            "node",
-            "mocha"
-        ],
-        "typeRoots": [
-            "node_modules/@types"
-        ]
-    },
-    "compileOnSave": false
+  "compilerOptions": {
+    "lib": ["es6"],
+    "module": "commonjs",
+    "sourceMap": true,
+    "target": "es6",
+    "types": ["assertion-error", "lodash", "node", "mocha"],
+    "typeRoots": ["node_modules/@types"]
+  },
+  "compileOnSave": false
 }
