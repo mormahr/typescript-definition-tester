@@ -1,21 +1,27 @@
-# Purpose
+## Fork
 
-The purpose of this repository is to wrap the TypeScript compiler so that a consumer can easily test their ambient module declarations against example *.ts files.
+This project has been [forked](https://github.com/adamcarr/typescript-definition-tester), due to inactivity of the original project. This fork is primarily as a tool for [express-promise-router](https://github.com/express-promise-router/express-promise-router).
+
+## Purpose
+
+The purpose of this repository is to wrap the TypeScript compiler so that a consumer can easily test their ambient module declarations against example \*.ts files.
 This module uses chai assertions so that a user can easily add this step to existing unit test infrastructure.
 
 [![wercker status](https://app.wercker.com/status/2ad0ff2e7585e4ff41477e6b6876acad/m "wercker status")](https://app.wercker.com/project/bykey/2ad0ff2e7585e4ff41477e6b6876acad)
 
 ## Install
 
-* Add typescript-definition-tester to your devDependencies property in your package.json file
+- Add typescript-definition-tester to your devDependencies property in your package.json file
+
 ```
 npm install typescript-definition-tester --save-dev
 ```
-* [optional] Link the typescript-definition-tester.d.ts file using tsd `tsd link --save`
+
+- [optional] Link the typescript-definition-tester.d.ts file using tsd `tsd link --save`
 
 ## Testing
 
-The recommended way to test ambient module declarations is to create an "examples" directory in your test folder. Then, you can pull in these *.ts example files 
+The recommended way to test ambient module declarations is to create an "examples" directory in your test folder. Then, you can pull in these \*.ts example files
 in a single test file that will pass these files to the TypeScript compiler.
 
 Example:

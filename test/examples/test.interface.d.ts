@@ -1,5 +1,5 @@
 declare module "test" {
-    export interface IPerson {
-        name: string;
-    }
+  export interface IPerson {
+    name: string;
+  }
 }
