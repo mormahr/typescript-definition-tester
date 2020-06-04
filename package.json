@@ -23,12 +23,12 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "@types/assertion-error": "^1.1.0",
     "@types/lodash": "^4.14.108",
     "@types/mocha": "^5.2.0",
     "@types/node": "8",
     "bluebird": "^2.9.24",
-    "mocha": "^5.1.1"
+    "mocha": "^5.1.1",
+    "typescript": "^3.9.3"
   },
   "typescript": {
     "definition": "./dist/typescript-definition-tester.d.ts"

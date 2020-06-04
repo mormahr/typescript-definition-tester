@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.walk = exports.compileDirectory = exports.compile = void 0;
 const ts = require("typescript");
 const fs = require("fs");
 const _ = require("lodash");
@@ -25,11 +26,8 @@ function compile(fileNames, options, done) {
         // TODO: this is generating errors so disabling for now. Will continue to investigate.
         // handleDiagnostics('Declaration', program.getDeclarationDiagnostics());
         handleDiagnostics('Global', program.getGlobalDiagnostics());
-        console.log('Global finished');
         handleDiagnostics('Semantic', program.getSemanticDiagnostics());
-        console.log('Semantic finished');
         handleDiagnostics('Syntactic', program.getSyntacticDiagnostics());
-        console.log('Syntactic finished');
         done();
     }
     catch (e) {
