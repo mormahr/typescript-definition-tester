@@ -22,26 +22,26 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "@types/lodash": "^4.14.108",
-    "@types/mocha": "^5.2.0",
-    "@types/node": "8",
-    "bluebird": "^2.9.24",
-    "husky": ">=4",
-    "lint-staged": ">=10",
-    "mocha": "^5.1.1",
+    "@types/lodash": "4.14.155",
+    "@types/mocha": "7.0.2",
+    "@types/node": "14.0.10",
+    "bluebird": "3.7.2",
+    "husky": "4.2.5",
+    "lint-staged": "10.2.8",
+    "mocha": "7.2.0",
     "prettier": "2.0.5",
-    "typescript": "^3.9.3"
+    "typescript": "3.9.3"
   },
   "typescript": {
     "definition": "./dist/typescript-definition-tester.d.ts"
   },
   "dependencies": {
-    "assertion-error": "^1.0.1",
-    "dts-bundle": "^0.2.0",
-    "lodash": "^3.6.0"
+    "assertion-error": "1.1.0",
+    "dts-bundle": "0.7.3",
+    "lodash": "4.17.15"
   },
   "peerDependencies": {
-    "typescript": "1.x || 2.x"
+    "typescript": "3.x"
   },
   "husky": {
     "hooks": {
