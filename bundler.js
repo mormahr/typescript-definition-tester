@@ -1,7 +1,6 @@
 var dts = require("dts-bundle");
-var pkg = require("./package.json");
 
 dts.bundle({
-  name: pkg.name,
+  name: "typescript-definition-tester",
   main: "dist/index.d.ts",
 });
