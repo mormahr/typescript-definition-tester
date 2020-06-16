@@ -1,6 +1,6 @@
 ## Fork
 
-This project has been [forked](https://github.com/adamcarr/typescript-definition-tester), due to inactivity of the original project. This fork is primarily as a tool for [express-promise-router](https://github.com/express-promise-router/express-promise-router).
+This project has been [forked](https://github.com/adamcarr/typescript-definition-tester), due to inactivity of the original project. The purpose of this fork is primarily as a testing tool for [express-promise-router](https://github.com/express-promise-router/express-promise-router).
 
 ## Purpose
 
@@ -9,7 +9,7 @@ This module uses chai assertions so that a user can easily add this step to exis
 
 ## Install
 
-- Add typescript-definition-tester to your devDependencies property in your package.json file
+Add typescript-definition-tester to your devDependencies property in your package.json file
 
 ```
 npm install @mormahr/typescript-definition-tester --save-dev
