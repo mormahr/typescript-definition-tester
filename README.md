@@ -12,7 +12,7 @@ This module uses chai assertions so that a user can easily add this step to exis
 - Add typescript-definition-tester to your devDependencies property in your package.json file
 
 ```
-npm install typescript-definition-tester --save-dev
+npm install @mormahr/typescript-definition-tester --save-dev
 ```
 
 ## Testing
