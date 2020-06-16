@@ -1,7 +1,7 @@
-import * as ts from "typescript";
-import * as fs from "fs";
-import * as _ from "lodash";
-import AssertionError = require("assertion-error");
+import AssertionError from 'assertion-error';
+import * as fs from 'fs';
+import * as _ from 'lodash';
+import * as ts from 'typescript';
 
 var defaultCompilerOptions: ts.CompilerOptions = {
   noEmitOnError: true,
@@ -15,14 +15,16 @@ function handleDiagnostics(
   diagnostics: ReadonlyArray<ts.Diagnostic>
 ) {
   diagnostics.forEach((diagnostic) => {
-    var { line, character } = diagnostic.file.getLineAndCharacterOfPosition(
-      diagnostic.start
-    );
-    var message = ts.flattenDiagnosticMessageText(diagnostic.messageText, "\n");
+    const { file, start, messageText } = diagnostic;
+
+    if (file === undefined || start === undefined) {
+      throw new AssertionError(`{type}: ${messageText}`);
+    }
+
+    var { line, character } = file.getLineAndCharacterOfPosition(start);
+    var message = ts.flattenDiagnosticMessageText(messageText, '\n');
     throw new AssertionError(
-      `${type}: ${diagnostic.file.fileName} (${line + 1},${
-        character + 1
-      }): ${message}`,
+      `${type}: ${file.fileName} (${line + 1},${character + 1}): ${message}`,
       {
         actual: diagnostic,
       }
@@ -43,9 +45,9 @@ export function compile(
 
     // TODO: this is generating errors so disabling for now. Will continue to investigate.
     // handleDiagnostics('Declaration', program.getDeclarationDiagnostics());
-    handleDiagnostics("Global", program.getGlobalDiagnostics());
-    handleDiagnostics("Semantic", program.getSemanticDiagnostics());
-    handleDiagnostics("Syntactic", program.getSyntacticDiagnostics());
+    handleDiagnostics('Global', program.getGlobalDiagnostics());
+    handleDiagnostics('Semantic', program.getSemanticDiagnostics());
+    handleDiagnostics('Syntactic', program.getSyntacticDiagnostics());
     done();
   } catch (e) {
     done(e);
@@ -91,13 +93,13 @@ export function compileDirectory(
   options = _.merge(defaultCompilerOptions, options || {});
 
   walk(path, filter, (err, results) => {
-    if (err) {
-      console.log("error error error");
-      throw new AssertionError("Error while walking directory for files.", {
+    if (err || results === undefined) {
+      console.log('error error error');
+      throw new AssertionError('Error while walking directory for files.', {
         actual: err,
       });
     } else {
-      compile(results, options, done);
+      compile(results, options, done!);
     }
   });
 }
@@ -115,23 +117,24 @@ export function walk(
 ): void {
   if (!done) {
     done = filter;
+    // @ts-ignore
     filter = undefined;
   }
 
-  var results = [];
+  var results: string[] = [];
   fs.readdir(dir, function (err, list) {
     if (err) {
-      return done(err);
+      return done!(err);
     }
     var i = 0;
     (function next() {
       var file = list[i++];
-      if (!file) return done(null, results);
-      file = dir + "/" + file;
-      fs.stat(file, function (err, stat) {
+      if (!file) return done!(null, results);
+      file = dir + '/' + file;
+      fs.stat(file, function (_err, stat) {
         if (stat && stat.isDirectory()) {
-          walk(file, function (err, res) {
-            results = results.concat(res);
+          walk(file, function (_err, res) {
+            results = results.concat(res!);
             next();
           });
         } else {
