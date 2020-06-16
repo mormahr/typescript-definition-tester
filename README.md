@@ -4,10 +4,8 @@ This project has been [forked](https://github.com/adamcarr/typescript-definition
 
 ## Purpose
 
-The purpose of this repository is to wrap the TypeScript compiler so that a consumer can easily test their ambient module declarations against example \*.ts files.
+The purpose of this project is to wrap the TypeScript compiler so that a consumer can easily test their ambient module declarations against example \*.ts files.
 This module uses chai assertions so that a user can easily add this step to existing unit test infrastructure.
-
-[![wercker status](https://app.wercker.com/status/2ad0ff2e7585e4ff41477e6b6876acad/m 'wercker status')](https://app.wercker.com/project/bykey/2ad0ff2e7585e4ff41477e6b6876acad)
 
 ## Install
 
@@ -16,8 +14,6 @@ This module uses chai assertions so that a user can easily add this step to exis
 ```
 npm install typescript-definition-tester --save-dev
 ```
-
-- [optional] Link the typescript-definition-tester.d.ts file using tsd `tsd link --save`
 
 ## Testing
 
